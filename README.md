@@ -22,7 +22,7 @@ How to configure message broker on Wildfly:
 </subsystem xmlns="urn:jboss:domain:ejb3:6.0"> 
 ```
 
-4 - Add activeMQ subsystem inside the profile tag: 
+4 - Add activeMQ subsystem inside <profile>. Copy it from the file standalone-full.xml (also $WILDFLY_HOME/standalone/configuration): 
 
 ```
 <profile> 
@@ -54,7 +54,7 @@ How to configure message broker on Wildfly:
 </profile>
 ```
 
-5 - Add our TestQueue jms-queue tag inside the server tag (code above) (below ExpiryQueue and DLQ):
+5 - In the code above, add our TestQueue jms-queue tag inside the server tag (below ExpiryQueue and DLQ):
 
 ```
   <jms-queue name="TestQueue" entries="java:/queue/TestQueue"/>
